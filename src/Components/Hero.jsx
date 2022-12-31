@@ -1,5 +1,4 @@
 import React from "react";
-import Button from "./Button";
 
 const Hero = () => {
   return (
@@ -18,10 +17,6 @@ const Hero = () => {
           in, ipsum dolorem tempora! Lorem ipsum dolor sit amet consectetur,
           adipisicing elit. Quam, sapiente?
         </p>
-      </div>
-      <div className="flex justify-center mx-4 pb-14">
-        <Button name="Login" />
-        <Button name="Sign Up" />
       </div>
     </div>
   );
