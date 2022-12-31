@@ -41,6 +41,7 @@ export default function HomePage() {
             <Link to="/">
                 <button className="primary-button" onClick={handleClick}>Log out</button>
             </Link>
+            
         </div>
 
     )
