@@ -1,6 +1,9 @@
 import React ,{useState}from 'react'
 import { Link, useNavigate } from 'react-router-dom'
 
+import { ToastContainer, toast } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
+
 import '../App.css'
 
 export default function SignUpPage() {
@@ -17,7 +20,8 @@ export default function SignUpPage() {
     const handleClick = async (e) => {
         e.preventDefault();
 
-        const item = {email,password,first_name,last_name,avatar, role:"444e04ac-43d7-428c-890f-2b940982feed"}
+        const item = {email,password,first_name,last_name, role:"444e04ac-43d7-428c-890f-2b940982feed"}
+        console.log(item);
 
             const response = await fetch("/users",{
                 method:'POST',
@@ -27,19 +31,22 @@ export default function SignUpPage() {
                     "Accept":"application/json"
                 }
             })
+            console.log(response);
             if(response.status !== 204 || !response) {
-                window.alert("Registration fail")
-                console.log("Registration Done");
-            }
-            else {
-                console.log("Successfull");
+                // window.alert("Registration fail")
+                toast("Registration Failed",{type:'error'})
+              }
+              else {
+                toast("Successfull",{type:'success'})
                 navigate("/login");
+                // console.log("Successfull");
             }
     }
 
     return (
         
 <div className="min-h-screen pt-32 bg-gradient-to-br from-amber-400 to-amber-200">
+  {/* <ToastContainer position='top-center'/> */}
 <div className="container mx-auto">
   <div className="flex flex-col lg:flex-row w-9/12 lg:w-10/12 bg-white rounded-xl mx-auto shadow-lg overflow-hidden">
     <div className="w-full lg:w-1/2 flex flex-col items-center justify-center p-12 bg-no-repeat bg-cover bg-center bg-gradient-to-bl from-teal-500 to-teal-200">
@@ -65,7 +72,7 @@ export default function SignUpPage() {
           <input  onChange={e=>setPassword(e.target.value)} type="password" placeholder="Password" className="border border-gray-400 py-1 px-2 w-full"/>
         </div>
         <div className="mt-4 lg:mt-5">
-          <input  onChange={e=>setPassword(e.target.value)} type="password" placeholder="Confirm Password" className="border border-gray-400 py-1 px-2 w-full"/>
+          <input type="password" placeholder="Confirm Password" className="border border-gray-400 py-1 px-2 w-full"/>
         </div>
         <div className="mt-4 lg:mt-5">
         </div>

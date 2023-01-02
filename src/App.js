@@ -2,6 +2,8 @@ import logo from './logo.svg';
 import './App.css';
 import React from 'react';
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom'
+import { ToastContainer, toast } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
 
 import LandingPage from './pages/LandingPage'
 import LoginPage from './pages/LoginPage'
@@ -19,6 +21,8 @@ function App() {
   return (
       <Router>
           <div>
+          <ToastContainer position='top-center'/>
+
               <Routes>
                   <Route exact path="/" element={ <LandingPage/> } />
                   <Route path="/login" element={ <LoginPage/> } />

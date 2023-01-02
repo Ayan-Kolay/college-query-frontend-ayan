@@ -1,10 +1,13 @@
-import { useParams,useLocation, json } from "react-router-dom";
+import { useParams,useLocation, json, Navigate } from "react-router-dom";
 import React, { useState,useEffect } from "react";
 import moment from "moment";
 import NavbarLoggedIn from "./NavbarLoggedIn";
 import getUserName from "../services/getUserName";
+import { useNavigate } from "react-router-dom";
 
 const Answer = () => {
+
+    const navigate = useNavigate();
 
     // console.log(data);
     const [answer,setAnswer] = useState("")
@@ -44,6 +47,7 @@ const Answer = () => {
       }, []);
 
     const PostAnswer = async(e) => {
+        e.preventDefault();
         const getInfo = localStorage.getItem("user-info");
         if (getInfo) {
             const infoObj = JSON.parse(getInfo);
@@ -66,6 +70,9 @@ const Answer = () => {
                 },
             })
             // console.log(response);
+            if(response.status===200){
+                navigate(0)
+            }
         }
     }
 

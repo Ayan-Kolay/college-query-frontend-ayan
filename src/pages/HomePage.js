@@ -6,19 +6,22 @@ import {Link, useNavigate } from "react-router-dom";
 import NavbarLoggedIn from "./NavbarLoggedIn";
 // import { Navbar } from "../Components/Navbar";
 
+import { ToastContainer, toast } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
+
+
 
 export default function HomePage() {
   
-  
+  const [like,setLike] = useState([])
+  const [isLiked,setIsLiked] = useState();
   const navigate = useNavigate();
   const Upvote = async (item) => {
-  
-}
 
+    //upvote functionality
 
+  }
 
-  
-  
   const Answers =  (item) => {
     // console.log(questionId);
     navigate(`/answer/${item.id}`,{state:{data:item}})

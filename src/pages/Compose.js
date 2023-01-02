@@ -1,5 +1,9 @@
 import React ,{useState} from "react";
+import { Navigate, useNavigate } from "react-router-dom";
 import getUserName from "../services/getUserName"
+import { ToastContainer, toast } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
+
 
 const Compose = () =>{
 
@@ -8,6 +12,7 @@ const Compose = () =>{
     const [title,setTitle] = useState("");
     const [description,setDescription] = useState("");
 
+    const navigate = useNavigate();
     const handleClick = async(e) => {
       e.preventDefault();
         const getInfo = localStorage.getItem("user-info");
@@ -32,10 +37,13 @@ const Compose = () =>{
             })
             // console.log(response);
             if(response.status==200) {
-                window.alert("Posted Sucessfully")
-            }
-            else{
-                window.alert("Error Occured")
+                // window.alert("Posted Sucessfully")
+                toast("Posted Successfully", {type:'success'})
+                navigate(-1)
+              }
+              else{
+                toast("Error Occured", {type:'error'})
+                // window.alert("Error Occured")
             }
         }
     }
