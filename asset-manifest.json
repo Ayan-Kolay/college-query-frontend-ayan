@@ -1,0 +1,17 @@
+{
+  "files": {
+    "main.css": "/college-query-frontend-ayan/static/css/main.2db4eb65.css",
+    "main.js": "/college-query-frontend-ayan/static/js/main.1bfe6b5b.js",
+    "static/js/787.d8826d96.chunk.js": "/college-query-frontend-ayan/static/js/787.d8826d96.chunk.js",
+    "static/media/bg.png": "/college-query-frontend-ayan/static/media/bg.dd6ac30ab1d1e75d109b.png",
+    "static/media/logo.svg": "/college-query-frontend-ayan/static/media/logo.6ce24c58023cc2f8fd88fe9d219db6c6.svg",
+    "index.html": "/college-query-frontend-ayan/index.html",
+    "main.2db4eb65.css.map": "/college-query-frontend-ayan/static/css/main.2db4eb65.css.map",
+    "main.1bfe6b5b.js.map": "/college-query-frontend-ayan/static/js/main.1bfe6b5b.js.map",
+    "787.d8826d96.chunk.js.map": "/college-query-frontend-ayan/static/js/787.d8826d96.chunk.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.2db4eb65.css",
+    "static/js/main.1bfe6b5b.js"
+  ]
+}
